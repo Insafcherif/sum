@@ -1,0 +1,35 @@
+ALGORITHM Sum_Test
+VAR
+    let X : newSet [50];
+    let Y : newSet [50];
+    let Sum=0; 
+    let Sumdup=0;
+BEGIN
+    for (let i = 0; i <X.length; i++) {
+        let j=0; 
+        while (j < Y.length) {
+            if (X[i]==Y[j]) {
+                X[i] = 0;
+                Y[j] = 0;
+                j++
+            }
+        }
+    }
+    for (let i = 0; i < X.length; i++) {
+        Sum = Sum + X[i];
+    }
+    for (let i = 0; i < Y.length; i++) {
+        Sum = Sum + Y[i];
+    }
+    for (let i = 0; i <X.length; i++) {
+    let j=0; 
+    while (j < Y.length) {
+     if (X[i]==Y[j]) {
+    Sumdup = Sumdup + X[i]+Y[i];
+                j++
+            }
+        }
+    }
+    return Sum; 
+    return Sumdup;
+END 

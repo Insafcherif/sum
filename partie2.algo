@@ -1,0 +1,29 @@
+ALGORITHM Sum2
+VAR
+    let Tab1 : Array [50]; 
+    let Tab2 : Array [50]; 
+    let Tab : Array [50];
+    let X  : HASH_TABLE<INTEGER,STRING>;
+    Sum, Sumdup : INTEGER; 
+    Sum , Sumdup = 0;
+BEGIN
+    Tab = Tab1.concat(Tab2);
+    for (let i = 0; i <Tab.length; i++) {
+        if (X.lookup(Tab[i]==True)) {
+            count =X.get(Tab[i])
+            X.insert(Tab[i],count+1);
+        }
+        else X.insert(Tab[i],1);
+    }
+    for (let i = 0; i <Tab.length; i++) {
+        if (X.lookup(Tab[i]>1)) {
+            Sumdup = Sumdup +(X[i]*X.get(Tab[i]));
+        }
+        if (X.lookup(Tab[i]==1)) {
+            Sum = Sum +X[i];
+        }
+    }
+    return Sum; 
+    return Sumdup;
+END
+
